@@ -35,3 +35,11 @@ async def main():
         await run(playwright)
 asyncio.run(main())
 
+
+#  User Agent
+# Sync
+context = browser.new_context(user_agent='My user agent')
+
+# Async
+context = await browser.new_context(user_agent='My user agent')
+
