@@ -37,9 +37,20 @@ asyncio.run(main())
 
 
 #  User Agent
+
 # Sync
 context = browser.new_context(user_agent='My user agent')
 
 # Async
 context = await browser.new_context(user_agent='My user agent')
+
+
+# Create a context with "geolocation" permissions granted:
+
+# Sync
+context = browser.new_context(geolocation={"longitude": 48.858455, "latitude": 2.294474}, 
+                              permissions=["geolocation"])
+
+# Async
+await context.set_geolocation({"longitude": 29.979097, "latitude": 31.134256})
 
